@@ -1,0 +1,242 @@
+%% Brackets
+\usepackage{stmaryrd}
+\newcommand{\shr}[1]{\left\llbracket #1 \right\rrbracket}
+\newcommand{\ang}[1]{\left\langle #1 \right\rangle}
+\newcommand{\sqr}[1]{\left[ #1 \right]}
+
+% Functionalities and protocols
+\newcommand{\Func}[1]{\mathcal{F}_{\mathsf{#1}}}
+\newcommand{\Prot}[1]{\Pi_{\mathsf{#1}}}
+\newcommand{\Proc}[1]{\pi_{\mathsf{#1}}}
+
+% Computational complexity
+\newcommand{\PPT}{\textsc{PPT}}
+
+% Cryptographic entities
+\newcommand{\Adv}{\mathcal{A}}
+\newcommand{\Sim}{\mathcal{S}}
+\newcommand{\TTP}{\textsc{TTP}}
+
+% Protocol proofs
+\newcommand{\view}[3]{\ensuremath{\textsf{view}_{#2}^{#1} \left( #3 \right)}}
+\newcommand{\out}[3]{\ensuremath{\textsf{output}_{#2}^{#1} \left( #3 \right)}}
+
+% Refs
+\newcommand{\FTest}{\hyperref[func:test]{\ensuremath{\Func{Test}}}}
+\newcommand{\PTest}{\hyperref[prot:test]{\ensuremath{\Prot{Test}}}}
+\newcommand{\PVEnc}{\hyperref[prot:venc]{\ensuremath{\Prot{VE}}}}
+\newcommand{\Fzk}[1]{\hyperref[prot:venc]{\ensuremath{\Func{zk}^{#1}}}}
+
+% Global parameters 
+\newcommand{\secparam}{\ensuremath{\lambda}}
+\newcommand{\secpar}{\ensuremath{\lambda}}
+\newcommand{\secp}{\secpar}
+\newcommand{\pp}{\ensuremath{\mathsf{pp}}}
+\newcommand{\pubparam}{\ensuremath{\mathsf{pp}}}
+
+% Algebra
+\newcommand{\field}{\mathcal{K}}
+\newcommand{\ring}{\mathcal{R}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\bool}{\{0,1\}\xspace}
+\newcommand{\bin}{\bool}
+
+% Set
+\newcommand{\set}[1]{\left\{#1\right\}}% {#1}
+\newcommand{\union}{\ensuremath{\cup}}  
+\newcommand{\unionsum}{\ensuremath{\bigcup}}
+
+%Nice empty set
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\newcommand{\setpred}[2]{\ensuremath{\set{\begin{matrix}#1\end{matrix}\,:\,\begin{matrix}#2\end{matrix}}}}
+\newcommand{\setcond}[2]{\ensuremath{\set{\begin{matrix}#1\end{matrix}\,:\ \begin{matrix}#2\end{matrix}}}}
+
+% Probability
+\newcommand{\prob}[1]{\ensuremath{\Pr\left[\begin{aligned}#1\end{aligned}\right]}}
+\newcommand{\probrv}[2]{\ensuremath{\Pr\left[\begin{aligned}#1\end{aligned}\,:\,\begin{aligned}#2\end{aligned}\right]}}
+\newcommand{\probcond}[2]{\ensuremath{\Pr\left[\begin{aligned}#1\end{aligned}\;\middle|\; \begin{aligned}#2\end{aligned}\right]}}
+\newcommand{\condprob}[2]{\probcond{#1}{#2}}
+\newcommand{\prcondrv}[3]{\ensuremath{\Pr\left[\begin{aligned}#1\end{aligned}\:\vert\: \begin{aligned}#2\end{aligned} \,:\ \begin{aligned}#3\end{aligned}\right]}}
+
+% Relations
+\newcommand{\ind}{\ensuremath{\approx}}
+\newcommand{\distr}{\mathcal{D}}
+\newcommand{\unif}{\ensuremath{\mathscr{U}}\xspace}
+\newcommand{\errd}{\ensuremath{\chi}\xspace}
+\newcommand{\bad}{\ensuremath{\mathsf{bad}}\xspace}
+\newcommand{\SD}{\mathsf{SD}}
+\newcommand{\defeq}{\ensuremath{\stackrel{\text{def}}{=}}}
+\newcommand{\compind}{\ensuremath{\stackrel{\text{comp}}{\equiv}}}
+\newcommand{\statind}{\ensuremath{\stackrel{\text{stat}}{\equiv}}}
+\newcommand{\perfind}{\ensuremath{\stackrel{\text{perf}}{\equiv}}}
+
+
+% Assignment
+\newcommand{\outputs}{\rightarrow}
+\newcommand{\uniform}{\overset{U}{\leftarrow}}
+\newcommand{\randget}{\overset{\scalebox{0.7}{~\$}}{\leftarrow}}
+\newcommand{\sample}{\overset{\scalebox{0.7}{~\$}}{\leftarrow}}
+\renewcommand{\gets}{\leftarrow}
+\newcommand{\rgets}[1]{%
+	\ifthenelse{\isempty{#1}}{\xleftarrow{\$}}{\xleftarrow{#1}}
+}
+
+% Signature 
+\newcommand{\setup}{\mathsf{Setup}}
+\newcommand{\gen}{\mathsf{Gen}}
+\newcommand{\sign}{\mathsf{Sign}}
+\newcommand{\ver}{\mathsf{Ver}}
+
+% Keys
+\newcommand{\pk}{\mathsf{pk}}
+\newcommand{\sk}{\mathsf{sk}}
+\newcommand{\vk}{\mathsf{vk}}
+\newcommand{\ck}{\mathsf{ck}}
+\newcommand{\ek}{\mathsf{ek}}
+\newcommand{\dk}{\mathsf{dk}}
+
+% Operators
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inorm}[1]{\norm{#1}_\infty}
+\newcommand{\enorm}[1]{\norm{#1}_2}
+\newcommand{\abs}[1]{\left| #1 \right |}
+\newcommand{\plmod}{\ensuremath{\;\;\text{mod}^+ \ }}
+\newcommand{\pmmod}{\ensuremath{\;\;\text{mod}^\pm \ }}
+\newcommand{\hadam}{\circ}
+\newcommand{\round}[1]{\left\lfloor#1\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+
+% Lattices
+\newcommand{\chal}{C}
+\newcommand{\smoothing}[1]{\eta_{\varepsilon}(#1)}
+\newcommand{\hint}{\vDelta}
+\newcommand{\hintbound}{\beta_{\hint}}
+\newcommand{\sigbound}{B_2}
+
+% Raccoon notations
+\newcommand{\lbitpk}{\xi}
+\newcommand{\lbitcom}{\nu}
+\newcommand{\hibit}{{\textsf{hi}}}
+\newcommand{\lobit}{{\textsf{lo}}}
+\newcommand{\roundpk}[1]{\round{#1}_{\lbitpk}}
+\newcommand{\roundcom}[1]{\round{#1}_{\lbitcom}}
+\newcommand{\qpk}{q_\lbitpk}
+\newcommand{\qcom}{q_\lbitcom}
+
+% --------------------------------------
+% Caligraphic
+% --------------------------------------
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cE}{\mathcal{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cZ}{\mathcal{Z}}
+
+
+% --------------------------------------
+% Matrix and vectors
+% --------------------------------------
+
+% Macros for matrices and vectors
+\newcommand{\matAbar}{\bar{\matA}}
+\newcommand{\matA}{\ensuremath{\mathbf{A}}}
+\newcommand{\matB}{\ensuremath{\mathbf{B}}}
+\newcommand{\matC}{\ensuremath{\mathbf{C}}}
+\newcommand{\matD}{\ensuremath{\mathbf{D}}}
+\newcommand{\matE}{\ensuremath{\mathbf{E}}}
+\newcommand{\matF}{\ensuremath{\mathbf{F}}}
+\newcommand{\matG}{\ensuremath{\mathbf{G}}}
+\newcommand{\matH}{\ensuremath{\mathbf{H}}}
+\newcommand{\matI}{\ensuremath{\mathbf{I}}}
+\newcommand{\matJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\matK}{\ensuremath{\mathbf{K}}}
+\newcommand{\matL}{\ensuremath{\mathbf{L}}}
+\newcommand{\matM}{\ensuremath{\mathbf{M}}}
+\newcommand{\matN}{\ensuremath{\mathbf{N}}}
+\newcommand{\matO}{\ensuremath{\mathbf{O}}}
+\newcommand{\matP}{\ensuremath{\mathbf{P}}}
+\newcommand{\matQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\matR}{\ensuremath{\mathbf{R}}}
+\newcommand{\matS}{\ensuremath{\mathbf{S}}}
+\newcommand{\matT}{\ensuremath{\mathbf{T}}}
+\newcommand{\matU}{\ensuremath{\mathbf{U}}}
+\newcommand{\matV}{\ensuremath{\mathbf{V}}}
+\newcommand{\matW}{\ensuremath{\mathbf{W}}}
+\newcommand{\matX}{\ensuremath{\mathbf{X}}}
+\newcommand{\matY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\matZ}{\ensuremath{\mathbf{Z}}}
+\newcommand{\matzero}{\ensuremath{\mathbf{0}}}
+\newcommand{\bmatD}{\ensuremath{\bar{\mathbf{D}}}}
+\newcommand{\bmatE}{\ensuremath{\bar{\mathbf{E}}}}
+\newcommand{\bmatR}{\ensuremath{\bar{\mathbf{R}}}}
+
+% Vectors
+\newcommand{\veca}{\ensuremath{\mathbf{a}}}
+\newcommand{\vecb}{\ensuremath{\mathbf{b}}}
+\newcommand{\vecc}{\ensuremath{\mathbf{c}}}
+\newcommand{\vecd}{\ensuremath{\mathbf{d}}}
+\newcommand{\vece}{\ensuremath{\mathbf{e}}}
+\newcommand{\vecf}{\ensuremath{\mathbf{f}}}
+\newcommand{\vecg}{\ensuremath{\mathbf{g}}}
+\newcommand{\vech}{\ensuremath{\mathbf{h}}}
+\newcommand{\veci}{\ensuremath{\mathbf{i}}}
+\newcommand{\vecj}{\ensuremath{\mathbf{j}}}
+\newcommand{\veck}{\ensuremath{\mathbf{k}}}
+\newcommand{\vecl}{\ensuremath{\mathbf{l}}}
+\newcommand{\vecm}{\ensuremath{\mathbf{m}}}
+\newcommand{\vecn}{\ensuremath{\mathbf{n}}}
+\newcommand{\veco}{\ensuremath{\mathbf{o}}}
+\newcommand{\vecp}{\ensuremath{\mathbf{p}}}
+\newcommand{\vecq}{\ensuremath{\mathbf{q}}}
+\newcommand{\vecr}{\ensuremath{\mathbf{r}}}
+\newcommand{\vecs}{\ensuremath{\mathbf{s}}}
+\newcommand{\vect}{\ensuremath{\mathbf{t}}}
+\newcommand{\vecu}{\ensuremath{\mathbf{u}}}
+\newcommand{\vecv}{\ensuremath{\mathbf{v}}}
+\newcommand{\vecw}{\ensuremath{\mathbf{w}}}
+\newcommand{\vecx}{\ensuremath{\mathbf{x}}}
+\newcommand{\vecy}{\ensuremath{\mathbf{y}}}
+\newcommand{\vecz}{\ensuremath{\mathbf{z}}}
+\newcommand{\veczero}{\ensuremath{\mathbf{0}}}
+\newcommand{\vecone}{\ensuremath{\mathbf{1}}}
+\newcommand{\vecG}{\ensuremath{\mathbf{G}}}
+\newcommand{\vecH}{\ensuremath{\mathbf{H}}}
+
+% Vector with greek letters
+\newcommand{\vecalpha}{{\ensuremath{\bm{\mathbf\alpha}}}}
+\newcommand{\vecbeta}{{\ensuremath{\bm{\mathbf\beta}}}}
+\newcommand{\vecgamma}{{\ensuremath{\bm{\mathbf\gamma}}}}
+\newcommand{\vecdelta}{{\ensuremath{\bm{\mathbf\delta}}}}
+\newcommand{\vecDelta}{{\ensuremath{\mathbf\Delta}}}
+\newcommand{\vecrho}{{\ensuremath{\mathbf\rho}}}
+\newcommand{\vecomega}{{\ensuremath{\bm{\mathbf\omega}}}}
+\newcommand{\vecOmega}{{\ensuremath{\bm{\mathbf\Omega}}}}
+\newcommand{\vecsigma}{{\ensuremath{\mathbf\sigma}}}
+
+\renewcommand{\epsilon}{\varepsilon}
